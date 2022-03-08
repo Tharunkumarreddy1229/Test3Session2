@@ -1,23 +1,25 @@
-#include<stdio.h>
-void input(int *num1, int *den1, int *num2, int *den2)
+#include <stdio.h>
+
+void input(int *a,int *b,int *c,int *d)
 {
-  printf("enter numerator 1 , enter denominator 1 , enter numerator 2 , enter denominator 2 \n");
-  scanf("%d%d%d%d",num1,den1,num2,den2);
+  printf("enter two fractions:");
+  scanf("%d%d%d%d",a,b,c,d);
 }
-void add(int num1,int den1, int num2, int den2, int *num3, int *den3)
+void add(int a,int b,int c,int d,int *x,int *y)
 {
-  *num3=(num1*den2)+(num2*den1);
-  *den3=den1*den2;
+*x=(a*d)+(b*c);
+*y=b*d;
 }
-void output(int num1, int den1, int num2, int den2, int num3, int den3)
+
+void output(int a,int b,int c,int d,int x,int y)
 {
-  printf("the sum of %d/%d + %d/%d = %d/%d",num1,den1,num2,den2,num3,den3);
+  printf("the sum of two fractions is %d/%d",x,y);
 }
 int main()
 {
-  int num1,den1,num2,den2,num3,den3;
-  input(&num1,&den1,&num2,&den2);
-  add(num1,den1,num2, den2,&num3,&den3);
-  output(num1,den1,num2,den2,num3,den3);
+  int a,b,c,d,x,y;
+  input (&a,&b,&c,&d);
+  add (a,b,c,d,&x,&y);
+  output (a,b,c,d,x,y);
   return 0;
 }
